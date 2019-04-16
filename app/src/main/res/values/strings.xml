@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ProjManager</string>
+    <string name="action_settings">Settings</string>
+    <string name="addProjectButtonText">Create New Project</string>
+    <string name="projects_layout_title_text">Projects</string>
+    <string name="add_project_dialog_title">Create Project</string>
+    <string name="create_project_confirm_button_text">Create Project</string>
+    <string name="project_title_hint">Project Name</string>
+    <string name="project_description_hint">Project Summary</string>
+</resources>
