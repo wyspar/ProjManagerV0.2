@@ -7,4 +7,9 @@
     <string name="create_project_confirm_button_text">Create Project</string>
     <string name="project_title_hint">Project Name</string>
     <string name="project_description_hint">Project Summary</string>
+    <string name="add_task_button_text">Add Task</string>
+    <string name="add_task_dialog_title">Create Task</string>
+    <string name="create_task_confirm_button_text">Create Task</string>
+    <string name="task_title_hint">Task Name</string>
+
 </resources>

@@ -1,6 +1,7 @@
 package com.example.rlgood8456.projmanager;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,14 +49,20 @@ public class TaskAdapter extends ArrayAdapter<Task>{
                     R.layout.task_list, parent, false);
         }
 
+        Task cTask = MainActivity.selectedProject.getTasks().get(position);
         // Get the {@link Dessert} object located at this position in the list
-        String currenttask = MainActivity.selectedProject.getTasks().get(position).getTaskName();
+        String currenttask = cTask.getTaskName();
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.task_list_item);
         // Get the version name from the current Project object and
         // set this text on the name TextView
         nameTextView.setText(currenttask);
+
+        if(cTask.isComplete())
+            nameTextView.setTextColor(Color.GREEN);
+        else
+            nameTextView.setTextColor(Color.RED);
 
 
 

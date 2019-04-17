@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         p1.addTask("Task1");
         p1.addTask("Task2");
         p1.addTask("Task3");
+        p1.getTasks().get(2).setComplete(true);
+
 
         projects.add(p1);
         projects.add(new Project("Project2","Project2Desc"));
