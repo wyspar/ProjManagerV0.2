@@ -12,7 +12,6 @@ import android.widget.ListView;
 
 public class CreateProjectDialog extends DialogFragment{
 
-//lKDJFLKAJSD
     View view;
 
     public CreateProjectDialog() {
