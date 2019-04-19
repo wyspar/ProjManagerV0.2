@@ -26,16 +26,17 @@ public class MainActivity extends AppCompatActivity {
         // Create an ArrayList of projects
         projects = new ArrayList<Project>();
 
-        Project p1 = new Project("Project1", "Project1Desc");
-        p1.addTask("Task1");
-        p1.addTask("Task2");
-        p1.addTask("Task3");
+
+        //Adds in a sample project, tell user what stuff is -DR
+        Project p1 = new Project("Sample Project", "Your first project.");
+        p1.addTask("Task 1: Tap the project name to change it");
+        p1.addTask("Task 2: Update the project list when name changes");
+        p1.addTask("Task 3: make this area nice looking lol");
         p1.getTasks().get(2).setComplete(true);
-
-
         projects.add(p1);
-        projects.add(new Project("Project2","Project2Desc"));
-        projects.add(new Project("Project3","Project3Desc"));
+
+//        projects.add(new Project("Project2","Project2Desc"));
+//        projects.add(new Project("Project3","Project3Desc"));
 
         Button createProjectButton = findViewById(R.id.addProjectButton);
         createProjectButton.setOnClickListener(new View.OnClickListener() {

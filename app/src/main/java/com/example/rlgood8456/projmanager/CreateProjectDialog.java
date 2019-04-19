@@ -20,14 +20,7 @@ public class CreateProjectDialog extends DialogFragment{
 
     @Override
     public Dialog onCreateDialog(Bundle bundle) {
-
-
-
-
-
-
-
-
+        //names the project, etc, then creates it
         AlertDialog.Builder builder=  new  AlertDialog.Builder(getActivity())
                 .setTitle(R.string.add_project_dialog_title)
                 .setPositiveButton(R.string.create_project_confirm_button_text,
@@ -51,13 +44,6 @@ public class CreateProjectDialog extends DialogFragment{
                             //    layout.addView(tv);
                              //   layout.addView(tv2);
 
-
-
-
-
-
-
-
                             }
                         }
                 )
@@ -76,7 +62,7 @@ public class CreateProjectDialog extends DialogFragment{
         return builder.create();
 
 
-    }
+    }//End of onCreateDialog
 
 
 

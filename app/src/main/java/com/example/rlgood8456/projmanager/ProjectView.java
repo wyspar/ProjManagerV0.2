@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.LinearLayoutManager;
 
@@ -19,17 +20,15 @@ public class ProjectView extends AppCompatActivity{
    //     private RecyclerView.Adapter mAdapter;
     //    private RecyclerView.LayoutManager layoutManager;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_view);
 
-        TextView pName = (TextView) findViewById(R.id.project_view_name);
+        final TextView pName = (TextView) findViewById(R.id.project_view_name);
         pName.setText(MainActivity.selectedProject.getProjectName());
 
-        TextView pDesc = (TextView) findViewById(R.id.project_view_desc);
+        final TextView pDesc = (TextView) findViewById(R.id.project_view_desc);
         pDesc.setText(MainActivity.selectedProject.getProjectDescription());
 
         // The adapter knows how to create list item views for each item
@@ -40,25 +39,16 @@ public class ProjectView extends AppCompatActivity{
         final ListView listView = (ListView) findViewById(R.id.tasks_listview);
         listView.setAdapter(taskAdapter);
 
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 Task t = MainActivity.selectedProject.getTasks().get(i);
-
                 t.setComplete(!t.isComplete());
-
                 taskAdapter.notifyDataSetInvalidated();
-
-
-
-
-
 
             }
         });
-
 
 
         Button createTaskButton = findViewById(R.id.add_task_button);
@@ -72,7 +62,20 @@ public class ProjectView extends AppCompatActivity{
         });
 
 
-
+        //change the name of the project -dr
+        pName.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("123");
+                UpdateProjectDialog dialog = new UpdateProjectDialog();
+                dialog.setProject(MainActivity.selectedProject);
+                dialog.setProjectName(MainActivity.selectedProject.getProjectName());
+                dialog.setProjectDesc(MainActivity.selectedProject.getProjectDescription());
+                dialog.setProjectViewName(pName);
+                dialog.setProjectViewDesc(pDesc);
+                dialog.show(getSupportFragmentManager(), "Update Task Dialog");
+            }
+        });
 
 
     }
