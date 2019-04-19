@@ -14,7 +14,7 @@ public class ProjectAdapter extends ArrayAdapter<Project>{
 
 
     private static final String LOG_TAG = ProjectAdapter.class.getSimpleName();
-    //TODO: save projects on phone to be able to reopen them.
+
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
      * The context is used to inflate the layout file, and the list is the data we want
