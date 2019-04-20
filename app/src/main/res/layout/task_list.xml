@@ -7,5 +7,7 @@
         android:id="@+id/task_list_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/normal_text_size" />
 </android.support.constraint.ConstraintLayout>
