@@ -11,5 +11,8 @@
     <string name="add_task_dialog_title">Create Task</string>
     <string name="create_task_confirm_button_text">Create Task</string>
     <string name="task_title_hint">Task Name</string>
+    <string name="spinner_string_hint">Add Members</string>
+    <string name="spinner_prompt">Select a Contact</string>
+    <string name="note_desc">Enter Text</string>
 
 </resources>
