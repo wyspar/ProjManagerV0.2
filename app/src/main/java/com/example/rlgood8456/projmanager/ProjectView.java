@@ -1,19 +1,16 @@
-package com.example.rlgood8456.projmanager;
+package com.example.managerv2;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.LinearLayoutManager;
 
 public class ProjectView extends AppCompatActivity{
-
-
+    FloatingActionButton fab;
 
   //      private RecyclerView recyclerView;
    //     private RecyclerView.Adapter mAdapter;
@@ -26,55 +23,52 @@ public class ProjectView extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_view);
 
+        Button noteButton = findViewById(R.id.addNoteButton);
+        noteButton.setOnClickListener(listener);
+
         TextView pName = (TextView) findViewById(R.id.project_view_name);
-        pName.setText(MainActivity.selectedProject.getProjectName());
+        pName.setText("Project Title: " + MainActivity.selectedProject.getProjectName());
 
         TextView pDesc = (TextView) findViewById(R.id.project_view_desc);
-        pDesc.setText(MainActivity.selectedProject.getProjectDescription());
+        pDesc.setText("Project Description: " + MainActivity.selectedProject.getProjectDescription());
+
+        TextView pMem = findViewById(R.id.membersView);
+        pMem.setText("Project Members: " + MainActivity.selectedProject.getContacts());
+
+        fab = findViewById(R.id.openNoteButton);
+
+        if(MainActivity.selectedProject.getNote() == "")
+            fab.hide();
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fab.show();
+                OpenNotesDialog dialog = new OpenNotesDialog();
+                dialog.show(getSupportFragmentManager(), "Open Notes Dialog");
+
+            }
+        });
 
         // The adapter knows how to create list item views for each item
         // in the list.
-        final TaskAdapter taskAdapter = new TaskAdapter(this, MainActivity.selectedProject.getTasks());
+        TaskAdapter taskAdapter = new TaskAdapter(this, MainActivity.selectedProject.getTasks());
 
         // Get a reference to the ListView, and attach the adapter to the listView.
-        final ListView listView = (ListView) findViewById(R.id.tasks_listview);
+        ListView listView = (ListView) findViewById(R.id.tasks_listview);
         listView.setAdapter(taskAdapter);
 
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-                Task t = MainActivity.selectedProject.getTasks().get(i);
-
-                t.setComplete(!t.isComplete());
-
-                taskAdapter.notifyDataSetInvalidated();
-
-
-
-
-
-
-            }
-        });
-
-
-
-        Button createTaskButton = findViewById(R.id.add_task_button);
-        createTaskButton.setOnClickListener(new View.OnClickListener() {
-            // @Override
-            public void onClick(View view) {
-                CreateTaskDialog ctd = new CreateTaskDialog();
-                ctd.show(getSupportFragmentManager(), "Create Task Dialog");
-            }
-
-        });
-
-
-
-
-
     }
+
+    private View.OnClickListener listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            fab.show();
+            CreateNotesDialog dialog = new CreateNotesDialog();
+            dialog.show(getSupportFragmentManager(), "Create Notes Dialog");
+
+        }
+    };
+
 
 }
