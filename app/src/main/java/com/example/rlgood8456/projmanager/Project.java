@@ -1,11 +1,9 @@
-package com.example.rlgood8456.projmanager;
-
-import java.util.ArrayList;
-
 public class Project {
 
     private String projectName;
     private String projectDescription;
+    private String note = "";
+    private ArrayList<String> projectMembers;
 
     // ArrayList of Tasks
     private ArrayList<Task> tasks;
@@ -14,15 +12,23 @@ public class Project {
     public Project() {
         projectName = "Project";
         projectDescription = "Summary";
+        projectMembers = new ArrayList<>();
         tasks = new ArrayList<Task>();
     }
 
-    public Project(String pName, String pDesc)
+    public Project(String pName, String pDesc, List<String> contacts)
 
     {
         projectName = pName;
         projectDescription = pDesc;
         tasks = new ArrayList<Task>();
+        projectMembers = new ArrayList<String>();
+
+        for(int i = 0; i < contacts.size();){
+
+            projectMembers.add(contacts.get(i));
+            i++;
+        }
     }
 
     public String getProjectName() {
@@ -48,6 +54,27 @@ public class Project {
     public ArrayList<Task> getTasks() {
         return tasks;
     }
+
+    public String getContacts()
+    {
+        String members = "";
+
+        for(int i = 0; i < projectMembers.size();){
+            members += projectMembers.get(i) + ", ";
+            i++;
+        }
+
+        return members;
+    }
+
+    public void setNote(String text){
+        note = text;
+    }
+
+    public String getNote(){
+        return note;
+    }
 }
+
 
 
