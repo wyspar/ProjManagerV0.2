@@ -1,40 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@android:color/white">
 
+
+    <TextView
+        android:id="@+id/projectOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/top_margin_res"
+        android:layout_weight="1"
+        android:background="@color/colorAccent"
+        android:gravity="center"
+        android:text="Overview"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/Title_size"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/project_view_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin_res"
+        android:layout_marginBottom="@dimen/top_margin_res"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:clickable="true"
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/normal_text_size" />
 
     <TextView
         android:id="@+id/project_view_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin_res"
+        android:layout_marginBottom="@dimen/top_margin_res"
         android:layout_weight="1"
-        android:text="TextView" />
+        android:clickable="true"
+        android:text="TextView"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/normal_text_size" />
+
+    <TextView
+        android:id="@+id/membersView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin_res"
+        android:layout_marginBottom="@dimen/top_margin_res"
+        android:layout_weight="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/normal_text_size" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/openNoteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin_res"
+        android:layout_marginBottom="@dimen/top_margin_res"
+        android:layout_weight="1"
+        android:background="@android:color/background_light"
+        android:clickable="true"
+        app:backgroundTint="@android:color/background_light"
+        app:srcCompat="@drawable/ic_info_note_24dp" />
+
+    <Button
+        android:id="@+id/addNoteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_margin_res"
+        android:layout_weight="1"
+        android:text="Add Note"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/normal_text_size" />
 
     <ListView
         android:id="@+id/tasks_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/tasks_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_weight="1" >
 
-    </ListView>
-
-    <Button
-        android:id="@+id/add_task_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/add_task_button_text" />
-
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>
