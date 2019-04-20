@@ -1,4 +1,5 @@
-package com.example.rlgood8456.projmanager;
+//change package after downloading
+package com.example.managerv2;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -25,17 +26,20 @@ public class MainActivity extends AppCompatActivity {
 
         // Create an ArrayList of projects
         projects = new ArrayList<Project>();
+        ArrayList<String> people = new ArrayList<>();
+        people.add("Person1");
+        people.add("Person2");
+        people.add("Person3");
+        people.add("Person4");
 
-        Project p1 = new Project("Project1", "Project1Desc");
+        Project p1 = new Project("Project1", "Project1Desc", people);
         p1.addTask("Task1");
         p1.addTask("Task2");
         p1.addTask("Task3");
-        p1.getTasks().get(2).setComplete(true);
-
 
         projects.add(p1);
-        projects.add(new Project("Project2","Project2Desc"));
-        projects.add(new Project("Project3","Project3Desc"));
+        projects.add(new Project("Project2","Project2Desc", people));
+        projects.add(new Project("Project3","Project3Desc", people));
 
         Button createProjectButton = findViewById(R.id.addProjectButton);
         createProjectButton.setOnClickListener(new View.OnClickListener() {
@@ -60,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 selectedProject = projects.get(i);
-
-
 
                 Intent viewProject = new Intent(MainActivity.this, ProjectView.class);
 
