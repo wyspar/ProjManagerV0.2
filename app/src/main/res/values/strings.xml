@@ -1,10 +1,9 @@
 <resources>
-    <string name="app_name">Project Manager</string>
+    <string name="app_name">ProjManager</string>
     <string name="action_settings">Settings</string>
     <string name="addProjectButtonText">Create New Project</string>
     <string name="projects_layout_title_text">Projects</string>
     <string name="add_project_dialog_title">Create Project</string>
-    <string name="project_update_name">Update Project</string>
     <string name="create_project_confirm_button_text">Create Project</string>
     <string name="project_title_hint">Project Name</string>
     <string name="project_description_hint">Project Summary</string>
@@ -12,5 +11,11 @@
     <string name="add_task_dialog_title">Create Task</string>
     <string name="create_task_confirm_button_text">Create Task</string>
     <string name="task_title_hint">Task Name</string>
-
+    <string name="spinner_string_hint">Add Members</string>
+    <string name="spinner_prompt">Select a Contact</string>
+    <string name="note_desc">Enter Text</string>
+    <!--Douglas' strings-->
+    <string name="task_edit">Edit Task</string>
+    <string name="task_delete">Delete Task</string>
+    <string name="project_update_name">Update Project</string>
 </resources>

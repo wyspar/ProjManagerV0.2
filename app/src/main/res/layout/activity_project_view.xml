@@ -1,40 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
     android:gravity="center_vertical"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:orientation="vertical"
     android:padding="16dp">
 
 
-    <TextView
-        android:id="@+id/project_view_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/project_view_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="TextView" />
-
-    <ListView
-        android:id="@+id/tasks_listview"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" >
+        android:layout_height="match_parent">
 
-    </ListView>
+        <TextView
+            android:id="@+id/projectOverview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="Overview"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/Title_size"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/add_task_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="@string/add_task_button_text" />
+        <TextView
+            android:id="@+id/project_view_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/projectOverview"
+            android:clickable="true"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/normal_text_size" />
+
+        <TextView
+            android:id="@+id/project_view_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/project_view_name"
+            android:clickable="true"
+            android:text="TextView"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/normal_text_size" />
+
+        <TextView
+            android:id="@+id/membersView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/project_view_desc"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/normal_text_size" />
+
+        <TextView
+            android:id="@+id/tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/membersView"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="Tasks"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/normal_text_size"/>
+
+        <ListView
+            android:id="@+id/tasks_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/add_task_button"
+            android:layout_below="@+id/tasks"></ListView>
+
+        <Button
+            android:id="@+id/add_task_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/openNoteButton"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/add_task_button_text"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/normal_text_size" />
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/openNoteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/addNoteButton"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/ic_info_note_24dp"
+            android:clickable="true" />
+
+        <Button
+            android:id="@+id/addNoteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="5dp"
+            android:text="Add Note"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/normal_text_size" />
+    </RelativeLayout>
 
 </LinearLayout>
