@@ -9,7 +9,6 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Button;
 
-import com.example.rlgood8456.projmanager.R;
 
 import java.util.ArrayList;
 

@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.rlgood8456.projmanager.R;
-
 import java.util.ArrayList;
 
 public class ProjectAdapter extends ArrayAdapter<Project>{

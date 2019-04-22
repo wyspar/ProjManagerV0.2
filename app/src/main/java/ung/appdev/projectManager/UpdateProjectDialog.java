@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.rlgood8456.projmanager.R;
-
 import java.util.ArrayList;
 
 public class UpdateProjectDialog extends DialogFragment{

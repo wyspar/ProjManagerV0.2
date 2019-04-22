@@ -9,8 +9,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.example.rlgood8456.projmanager.R;
-
 public class CreateTaskDialog extends DialogFragment{
 
 

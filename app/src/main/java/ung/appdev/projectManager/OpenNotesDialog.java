@@ -8,8 +8,6 @@ import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.rlgood8456.projmanager.R;
-
 import java.text.SimpleDateFormat;
 
 public class OpenNotesDialog extends DialogFragment {

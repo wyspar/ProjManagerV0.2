@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
 
-import com.example.rlgood8456.projmanager.R;
+
 
 public class CreateNotesDialog extends DialogFragment {
 
